@@ -55,7 +55,7 @@ def main():
                         smoothed_image = cv2.GaussianBlur(auto_contrast, (5, 5), 0)
 
                         # Run YOLO prediction (tuned for Streamlit/Local Hardware execution)
-                        results = model.predict(smoothed_image, imgsz=1280, conf=0.1, iou=0.1, save=False)
+                        results = model.predict(smoothed_image, imgsz=1280, conf=0.06, iou=0.0, save=False)
                         
                         # Plot the results on the image
                         result_img_array = results[0].plot()
