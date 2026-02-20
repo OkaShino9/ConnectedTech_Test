@@ -1,0 +1,13 @@
+train: /Users/kevster/programming/Python/connectech_interview/test.v1i.yolov8/train/images
+val: /Users/kevster/programming/Python/connectech_interview/test.v1i.yolov8/train/images
+test: /Users/kevster/programming/Python/connectech_interview/test.v1i.yolov8/train/images
+
+nc: 1
+names: ['Bottles']
+
+roboflow:
+  workspace: connected-tech
+  project: test-2bi48
+  version: 1
+  license: Private
+  url: https://app.roboflow.com/connected-tech/test-2bi48/1
