@@ -9,7 +9,7 @@ def main():
     st.set_page_config(page_title="Bottle Detection", page_icon="💧", layout="wide")
     st.title("Blue Water Bottle Detection & Counting")
     st.markdown("### AI Engineer Selection Test")
-    st.write("This application detects and counts blue water bottles inside a plastic bag using a trained YOLOv8 model.")
+    st.write("This application detects and counts blue water bottles inside a plastic bag using a trained YOLO11s model.")
 
     # Load model
     model_path = "best11s.pt"

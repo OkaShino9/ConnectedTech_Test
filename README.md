@@ -3,7 +3,7 @@
 This repository contains the solution for the AI Engineer selection test. The objective is to accurately detect and count the number of blue water bottles inside a plastic bag.
 
 ## Features
-- **YOLOv8 Object Detection**: Utilizes a custom-trained YOLOv8 model for accurate detection of blue water bottles.
+- **YOLO11s Object Detection**: Utilizes a custom-trained YOLO11s model for accurate detection of blue water bottles.
 - **Streamlit Web Application**: Provides a simple and interactive UI to upload or select test images, run the model, and display the detection results and count.
 
 ## Installation & Setup
@@ -33,13 +33,13 @@ This repository contains the solution for the AI Engineer selection test. The ob
 1. Launch the Streamlit app.
 2. In the left sidebar under "Simulation Options", select an image (`Data_Bottles.png` or `Example_Test_Bottles.png`).
 3. Click on the **"Detect and Count Bottles"** button.
-4. The system will process the image with the YOLOv8 model and display the bounding boxes along with the total count of the detected blue water bottles.
+4. The system will process the image with the YOLO11s model and display the bounding boxes along with the total count of the detected blue water bottles.
 
 ---
 
-## Model Selection: YOLOv8s and YOLO11s
+## Model Selection: YOLO11s
 
-The primary focus for this project was on "small" parameter variants, specifically **YOLOv8s** and **YOLO11s**. Given the typical constraints of deployment hardware in factory or manufacturing environments—which often rely on Edge devices, moderate CPUs/NPUs, or standard industrial PCs rather than massive cloud GPUs—these models provide the optimal balance between detection accuracy and low-latency inference speed.
+The primary focus for this project was on "small" parameter variants, specifically **YOLO11s**. Given the typical constraints of deployment hardware in factory or manufacturing environments—which often rely on Edge devices, moderate CPUs/NPUs, or standard industrial PCs rather than massive cloud GPUs—these models provide the optimal balance between detection accuracy and low-latency inference speed.
 
 As illustrated in the deployment decision flowchart below, when prioritizing edge-friendly, balanced performance, these models prove to be highly suitable for real-time tracking on the factory floor:
 
