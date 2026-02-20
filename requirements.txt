@@ -1,4 +1,4 @@
-streamilt
+streamlit
 ultralytics
 opencv-python
 numpy
