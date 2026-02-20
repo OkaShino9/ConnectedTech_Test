@@ -70,8 +70,11 @@ During the development of this solution, several approaches were tested and eval
 3. **SAHI (Slicing Aided Hyper Inference)**:
    I also experimented with SAHI to better handle occlusions and potentially detect smaller or partially hidden features. However, it did not provide a substantial improvement for this specific use case and ended up complicating the pipeline without a corresponding performance gain.
 
-4. **Vision Language Models (VLMs) with ResNet Backbone**:
-   Interestingly, I explored using Vision Language Models (VLMs) combined with a ResNet backbone. In my tests, this approach yielded the most promising results, achieving zero false negatives and perfectly detecting the blue water bottles inside the bag.
+4. **Vision Language Models (VLMs)**:
+   Interestingly, I explored using Vision Language Models (VLMs), specifically **Qwen2.5-VL**, to detect and count the bottles. This approach yielded very promising results and demonstrated the flexibility of large multimodal models for complex object detection and counting tasks.
+
+5. **ResNet50 Backbone**:
+   I also independently experimented with training a custom detection model using a **ResNet50** backbone. In my tests, this approach yielded the most promising results, achieving zero false negatives and perfectly detecting the blue water bottles inside the bag.
 
 ### Conclusion
 
