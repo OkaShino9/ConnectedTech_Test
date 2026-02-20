@@ -45,6 +45,10 @@ As illustrated in the deployment decision flowchart below, when prioritizing edg
 
 ![Model Selection Flowchart](experiment.png)
 
+Furthermore, the overall mAP and inference speeds of these models closely match our application requirements when evaluated on Edge/CPU targets. Their lightweight architecture allows for faster processing of video frames, minimizing latency issues that are common with larger models.
+
+![Model Comparison](compare_model.png)
+
 ## Experimental Results and Observations
 
 During the development of this solution, several approaches were tested and evaluated to achieve the best performance:
