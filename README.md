@@ -37,6 +37,14 @@ This repository contains the solution for the AI Engineer selection test. The ob
 
 ---
 
+## Model Selection: YOLOv8s and YOLO11s
+
+The primary focus for this project was on "small" parameter variants, specifically **YOLOv8s** and **YOLO11s**. Given the typical constraints of deployment hardware in factory or manufacturing environments—which often rely on Edge devices, moderate CPUs/NPUs, or standard industrial PCs rather than massive cloud GPUs—these models provide the optimal balance between detection accuracy and low-latency inference speed.
+
+As illustrated in the deployment decision flowchart below, when prioritizing edge-friendly, balanced performance, these models prove to be highly suitable for real-time tracking on the factory floor:
+
+![Model Selection Flowchart](experiment.png)
+
 ## Experimental Results and Observations
 
 During the development of this solution, several approaches were tested and evaluated to achieve the best performance:
