@@ -47,8 +47,14 @@ def main():
                 st.subheader("Action")
                 if st.button("Detect and Count Bottles", type="primary"):
                     with st.spinner('Detecting objects...'):
+                        # Preprocess image
+                        cv_image = cv2.imread(img_path)
+                        denoised_image = cv2.fastNlMeansDenoising(cv_image)
+                        auto_contrast = cv2.normalize(denoised_image, None, 0, 175, cv2.NORM_MINMAX)
+                        smoothed_image = cv2.GaussianBlur(auto_contrast, (5, 5), 0)
+
                         # Run YOLO prediction
-                        results = model.predict(image, imgsz=1280, conf=0.6, iou=0)
+                        results = model.predict(smoothed_image, imgsz=1280, conf=0.25, iou=0, save=False)
                         
                         # Plot the results on the image
                         result_img_array = results[0].plot()
