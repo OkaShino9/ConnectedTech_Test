@@ -48,7 +48,7 @@ def main():
                 if st.button("Detect and Count Bottles", type="primary"):
                     with st.spinner('Detecting objects...'):
                         # Run YOLO prediction
-                        results = model(image)
+                        results = model.predict(image, imgsz=1280, conf=0.6, iou=0)
                         
                         # Plot the results on the image
                         result_img_array = results[0].plot()
