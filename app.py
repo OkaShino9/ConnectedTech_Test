@@ -1,8 +1,32 @@
+import sys
+import os
+
+try:
+    import cv2
+except ImportError:
+    # --- Streamlit Cloud OpenCV Workaround ---
+    # Streamlit Cloud's apt-get repo often has broken libglib2.0 dependencies.
+    # UV/PIP installs opencv-python alongside headless, causing libGL/libgthread errors.
+    # We catch the ImportError, dynamically install headless to an isolated /tmp dir,
+    # and import it directly into sys.modules.
+    import subprocess
+    if "cv2" in sys.modules:
+        del sys.modules["cv2"]
+    
+    cv2_path = "/tmp/cv2_headless"
+    if cv2_path not in sys.path:
+        sys.path.insert(0, cv2_path)
+        
+    if not os.path.exists(os.path.join(cv2_path, "cv2")):
+        subprocess.check_call([
+            sys.executable, "-m", "pip", "install", 
+            "opencv-python-headless", "--ignore-installed", "--no-deps", "-t", cv2_path
+        ])
+    import cv2
+
 import streamlit as st
-import cv2
 import numpy as np
 from ultralytics import YOLO
-import os
 from PIL import Image
 
 def main():
