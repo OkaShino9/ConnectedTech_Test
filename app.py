@@ -1,20 +1,8 @@
-import os
-import sys
-
-try:
-    import cv2
-except ImportError:
-    # --- Streamlit Cloud Workaround ---
-    # Streamlit Cloud often installs 'opencv-python' due to ultralytics dependency,
-    # causing missing libGL.so.1 errors. We force install the headless version.
-    import subprocess
-    subprocess.check_call([sys.executable, "-m", "pip", "uninstall", "-y", "opencv-python", "opencv-python-headless"])
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "opencv-python-headless"])
-    import cv2
-
 import streamlit as st
+import cv2
 import numpy as np
 from ultralytics import YOLO
+import os
 from PIL import Image
 
 def main():
