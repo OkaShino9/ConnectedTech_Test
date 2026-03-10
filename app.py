@@ -6,7 +6,6 @@ import os
 from PIL import Image
 
 def main():
-    st.set_page_config(page_title="Bottle Detection", page_icon="💧", layout="wide")
     st.set_page_config(page_title="Bottle Detection", layout="wide")
     st.title("Blue Water Bottle Detection & Counting")
     st.markdown("### AI Engineer Selection Test")
